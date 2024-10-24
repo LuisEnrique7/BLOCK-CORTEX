@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarte en BlockCortex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Color de fondo oscuro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        header {
+            background-color: #673ab7; /* Color principal */
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #09fa05; /* Color verde */
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .login-container {
+            background-color: #1a1a1a;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 600px; /* Ajustado para mejor apariencia */
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            color: #09fa05; /* Color verde */
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        input[type="email"], input[type="password"], input[type="text"] {
+            width: 100%;
+            padding: 10px 25px; 
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: #673ab7; /* Color del icono */
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #673ab7; /* Color principal */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #08e400; /* Color verde más oscuro */
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+            display: none; /* Oculto por defecto */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>BLOCKCORTEX</h1>
+    <nav>
+        <a href="menu.html">Inicio</a>
+        <a href="#">Sobre Nosotros</a>
+        <a href="#">Contacto</a>
+    </nav>
+</header>
+
+<div class="login-container">
+    <h2>Registrarte en BlockCortex</h2>
+    <form id="registrationForm">
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre(s)" required>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-phone"></i>
+            <input type="text" id="telefono" name="telefono" placeholder="Número de teléfono" required pattern="\+52[0-9]{10}" title="El número debe ser en formato +52 seguido de 10 dígitos">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required minlength="8">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" placeholder="Confirmar contraseña" required minlength="8">
+        </div>
+        <span id="errorMsg" class="error">Las contraseñas no coinciden.</span>
+        <button type="button" id="createAccountButton">Crear cuenta</button> <!-- Cambiado a type="button" -->
+    </form>
+    <button onclick="window.location.href='login.html'">Regresar a Iniciar Sesión</button> <!-- Botón para regresar a la página de inicio de sesión -->
+</div>
+
+<script>
+    // Validar que las contraseñas coincidan antes de enviar el formulario
+    document.getElementById('createAccountButton').addEventListener('click', function() {
+        const contrasena = document.getElementById('contrasena').value;
+        const confirmarContrasena = document.getElementById('confirmar_contrasena').value;
+        const errorMsg = document.getElementById('errorMsg');
+
+        if (contrasena !== confirmarContrasena) {
+            errorMsg.style.display = 'block'; // Mostrar mensaje de error
+        } else {
+            errorMsg.style.display = 'none'; // Ocultar mensaje de error si coinciden
+            // Aquí puedes agregar cualquier acción adicional antes de redirigir
+            window.location.href = 'login.html'; // Redirigir a la página de inicio de sesión
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Descentralizado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #000000;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .system-component {
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .system-component:hover {
+            transform: translateY(-5px);
+        }
+
+        .component-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #333;
+        }
+
+        .process-item {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .verification {
+            background: #fff9c4;
+            grid-area: verification;
+        }
+
+        .blockchain {
+            background: #ffccbc;
+            grid-area: blockchain;
+        }
+
+        .premium {
+            background: #e1bee7;
+            grid-area: premium;
+        }
+
+        .community {
+            background: #bbdefb;
+            grid-area: community;
+        }
+
+        .ai {
+            background: #c8e6c9;
+            grid-area: ai;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                "blockchain verification ai"
+                "blockchain premium ai"
+                "blockchain community ai";
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .arrow {
+            position: relative;
+            height: 20px;
+            margin: 10px 0;
+            background: #333;
+            clip-path: polygon(0 40%, 90% 40%, 90% 20%, 100% 50%, 90% 80%, 90% 60%, 0 60%);
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-areas:
+                    "verification"
+                    "blockchain"
+                    "premium"
+                    "community"
+                    "ai";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="system-component verification">
+                <div class="component-title">VERIFICACIÓN</div>
+                <div class="process-item">Verifica Respuestas</div>
+                <div class="arrow"></div>
+                <div class="process-item">Calcula Recompensas</div>
+                <div class="arrow"></div>
+                <div class="process-item">Actualiza Reputación</div>
+            </div>
+
+            <div class="system-component blockchain">
+                <div class="component-title">BLOCKCHAIN</div>
+                <div class="process-item">Smart Contracts</div>
+                <div class="arrow"></div>
+                <div class="process-item">Sistema de Recompensas</div>
+                <div class="arrow"></div>
+                <div class="process-item">Registro Inmutable</div>
+            </div>
+
+            <div class="system-component premium">
+                <div class="component-title">USUARIO PREMIUM</div>
+                <div class="process-item">Interacción con Sistema</div>
+            </div>
+
+            <div class="system-component community">
+                <div class="component-title">COMUNIDAD</div>
+                <div class="process-item">Usuarios Expertos</div>
+                <div class="arrow"></div>
+                <div class="process-item">Respuestas Comunidad</div>
+                <div class="arrow"></div>
+                <div class="process-item">Validación Colectiva</div>
+            </div>
+
+            <div class="system-component ai">
+                <div class="component-title">IA DESCENTRALIZADA</div>
+                <div class="process-item">Recibe Consultas</div>
+                <div class="arrow"></div>
+                <div class="process-item">Procesa en Blockchain</div>
+                <div class="arrow"></div>
+                <div class="process-item">Genera Respuestas</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

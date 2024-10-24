@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockCortex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #673ab7;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: #09fa05;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            flex: 1;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background-color: #09fa05;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .feature, .menu-content {
+            text-align: center;
+            width: 30%;
+        }
+        .feature i, .menu-content i {
+            font-size: 3em;
+            color: #09ff00;
+            margin-bottom: 10px;
+        }
+        .community-button {
+            background-color: #673ab7;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .community-button:hover {
+            background-color: #08e400;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BLOCKCORTEX</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="#">Sobre Nosotros</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Bienvenido a BlockCortex</h1>
+        <p>Inteligencia Artificial Híbrida para una Comunidad Colaborativa</p>
+        <br>
+        <br>
+        <button class="btn" onclick="location.href='login.html'">Iniciar Sesión</button>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <i class="fas fa-brain"></i>
+            <h3>IA Centralizada</h3>
+            <p>Asistente inteligente para consultas y tareas diarias.</p>
+        </div>
+        <div class="menu-content">
+            <h2>IA Descentralizada</h2>
+            <p>Fomenta la colaboración entre usuarios utilizando tecnología blockchain.</p>
+        
+            <!-- Botón para entrar a la comunidad y acceder a la IA -->
+            <button class="community-button" onclick="window.location.href = './IADECENTRALIZADA/iad.html'">Acceder a IA Comunidad</button>
+        </div>
+        <div class="feature">
+            <i class="fas fa-users"></i>
+            <h3>Comunidad Colaborativa</h3>
+            <p>Conéctate con otros usuarios y comparte conocimientos.</p>
+        </div>
+    </section>
+    <footer>
+        <p>© 2024 BlockCortex. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

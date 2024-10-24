@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - BlockCortex</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #673ab7; /* Color verde */
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #09fa05; /* Color verde */
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .login-container {
+            background-color: #1a1a1a;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+        h2 {
+            color: #08e400;; /* Color verde */
+            margin-bottom: 20px;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #673ab7; /* Color verde */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #08e400; /* Color verde más oscuro */
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+            display: none; /* Oculto por defecto */
+        }
+        .forgot-password {
+            display: block;
+            margin-top: 10px;
+            color: #09fa05; /* Color verde */
+            text-decoration: none;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: auto; /* Para empujar el footer al final */
+            background-color: #1e1e1e;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>BLOCKCORTEX</h1>
+    <nav>
+        <a href="menu.html">Inicio</a>
+        <a href="#">Sobre Nosotros</a>
+        <a href="#">Contacto</a>
+    </nav>
+</header>
+
+<div class="login-container">
+    <h2>Iniciar Sesión en BlockCortex</h2>
+    <form id="loginForm" method="POST" action="procesar_login.php">
+        <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+    <button onclick="window.location.href='registro_usuario.html'">Crear Cuenta</button>
+    <button onclick="window.location.href='menu.html'">Regresar al menú</button> <!-- Botón para regresar al menú -->
+    <span id="errorMsg" class="error">Por favor, complete todos los campos.</span>
+</div>
+
+<footer>
+    <p>&copy; 2024 BlockCortex. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    // Ejemplo de manejo de error en el cliente
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', function(event) {
+        const correo = document.getElementById('correo').value;
+        const contrasena = document.getElementById('contrasena').value;
+
+        // Validación simple (esto normalmente se haría en el servidor)
+        if (!correo || !contrasena) {
+            event.preventDefault(); // Prevenir el envío del formulario
+            document.getElementById('errorMsg').style.display = 'block'; // Mostrar mensaje de error
+        } else {
+            event.preventDefault(); // Prevenir el envío del formulario para la demostración
+            window.location.href = 'IACENTRALIZADA/static/index.html'; // Redirigir a la página de la IA
+        }
+    });
+</script>
+
+</body>
+</html>
